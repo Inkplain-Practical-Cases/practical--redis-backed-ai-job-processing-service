@@ -1,8 +1,8 @@
 {
   "crd_version": 1,
-  "name": "Redis-backed AI jobs — step 1",
-  "description": "Cumulative educational job service component inventory",
-  "generated_at": "2026-10-10T11:45:00Z",
+  "name": "Redis AI job service STEP-1",
+  "description": "Async job submission API",
+  "generated_at": "2026-10-10T12:05:00Z",
   "source": {
     "repo": "github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
     "revision": "step-01-async-job-submission-api",
@@ -16,19 +16,123 @@
   "flows": [
     {
       "id": "jobs",
-      "name": "Job processing",
-      "description": "Submit and process AI jobs",
-      "entry": "be.JobRequest"
+      "name": "AI job lifecycle",
+      "description": "Submission, queue processing and status retrieval",
+      "entry": "be.submit_job"
     }
   ],
   "components": [
+    {
+      "id": "be.submit_job",
+      "name": "submit_job",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "submit_job performs its responsibility in the STEP-1 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "submit_job",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "request validation",
+          "origin": "imported",
+          "description": "Delegates to be.JobInput for request validation.",
+          "show": true,
+          "calls": {
+            "component": "be.JobInput",
+            "type": "call",
+            "label": "request validation",
+            "evidence": "Source: app/main.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "POST /jobs"
+      }
+    },
+    {
+      "id": "be.get_job",
+      "name": "get_job",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "get_job performs its responsibility in the STEP-1 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "get_job",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "GET /jobs/{job_id}"
+      }
+    },
+    {
+      "id": "be.JobInput",
+      "name": "JobInput",
+      "kind": "class",
+      "side": "backend",
+      "layer": "schema",
+      "description": "JobInput performs its responsibility in the STEP-1 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "JobInput",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
     {
       "id": "be.JobRequest",
       "name": "JobRequest",
       "kind": "class",
       "side": "backend",
       "layer": "schema",
-      "description": "Async job submission API",
+      "description": "JobRequest performs its responsibility in the STEP-1 implementation. See app/features/feature_jobs/schemas/job_request.py.",
       "flows": [
         "jobs"
       ],
@@ -37,11 +141,11 @@
         "symbol": "JobRequest",
         "lines": [
           1,
-          30
+          100
         ]
       },
       "owner": "feature_jobs",
-      "component_reason": "Implements a distinct step capability",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
       "status": "observed",
       "step_change": "added",
       "inputs": [],
@@ -49,7 +153,7 @@
       "operations": [],
       "outputs": [],
       "attributes": {
-        "validations_note": "No further boundary checks inside this component"
+        "validations_note": "See original source for conditional checks"
       }
     }
   ],
