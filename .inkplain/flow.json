@@ -27,7 +27,7 @@
       }
     },
     "content": {
-      "summary": "STEP-1 portal source corrections read back: header equality is not authentication, unused JobRequest is identified, and implementation links follow component explanations. Full semantic audit pending.",
+      "summary": "Stage 4 partial: STEP-1 pytest lesson corrected to 202/404/200 assertions, caller-tenant caveat and exact test source link; MCP read-back verified. Reviewed all six STEP implementation lessons, STEP-5/6 component lessons, main CI success and six INKP tabs with zero missing links. Full 45-item audit remains.",
       "started_at": "2026-10-10T12:08:49.030Z",
       "finished_at": null,
       "status": "in_progress",
@@ -77,5 +77,5 @@
       "finished_at": "2026-10-10T12:11:29.539Z"
     }
   },
-  "updated_at": "2026-10-10T20:40:04.607Z"
+  "updated_at": "2026-10-10T22:14:36.354Z"
 }
