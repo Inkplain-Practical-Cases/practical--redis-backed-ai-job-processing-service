@@ -1,0 +1,66 @@
+{
+  "crd_version": 1,
+  "name": "Redis-backed AI jobs — step 1",
+  "description": "Cumulative educational job service component inventory",
+  "generated_at": "2026-10-10T11:45:00Z",
+  "source": {
+    "repo": "github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
+    "revision": "step-01-async-job-submission-api",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "flows": [
+    {
+      "id": "jobs",
+      "name": "Job processing",
+      "description": "Submit and process AI jobs",
+      "entry": "be.JobRequest"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.JobRequest",
+      "name": "JobRequest",
+      "kind": "class",
+      "side": "backend",
+      "layer": "schema",
+      "description": "Async job submission API",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/schemas/job_request.py",
+        "symbol": "JobRequest",
+        "lines": [
+          1,
+          30
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Implements a distinct step capability",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "No further boundary checks inside this component"
+      }
+    }
+  ],
+  "dependencies": [],
+  "unresolved": [],
+  "step": {
+    "no": 1,
+    "of": 6,
+    "title": "Async job submission API",
+    "branch": "step-01-async-job-submission-api",
+    "previous": null,
+    "removed": []
+  }
+}
