@@ -57,7 +57,7 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "45 lessons and structural QA exist, but full source-backed semantic audit remains unverified. This run corrected seven generic 4M passages in STEP-5/6 and read them back. Keep content in progress until the remaining lessons are audited.",
+      "summary": "This run read back all 45 lessons and verified six INKP tabs with zero missing documents. Improved Overview with interactive seven-file CRD tree, exact main-branch FastAPI source and detailed real repository map/run commands. Full semantic/source-link audit and production-authorization caveats remain open.",
       "outputs": {
         "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
         "categories": 8,
@@ -77,5 +77,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T14:11:43.151Z"
+  "updated_at": "2026-10-10T15:40:50.954Z"
 }
