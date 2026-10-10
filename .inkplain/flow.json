@@ -6,76 +6,76 @@
   },
   "current": "content",
   "stages": {
-    "content": {
-      "status": "in_progress",
-      "finished_at": null,
+    "repo": {
+      "finished_at": "2026-10-10T12:11:14.658Z",
+      "started_at": "2026-10-10T11:44:09.706Z",
+      "summary": "Verified GitHub Actions success 7/7 (STEP-1…STEP-6 and main) after fixing pytest import-path invocation. Six cumulative learning branches include HTTP endpoints, local queue/worker exercises, README, STEP-N.crd/md and tests; main contains FastAPI/Redis worker + Docker, CI, and FINAL.crd. Educational reference, not a hardened production queue.",
+      "status": "done",
       "updated_by": "api-key:for-chatgpt-test-2",
-      "started_at": "2026-10-10T12:08:49.030Z",
-      "summary": "45 lessons inspected for structure and basic depth; final source-link/semantic audit remains open; stage not accepted yet.",
       "outputs": {
-        "missing_linked_documents": 0,
-        "structural_qa": true,
-        "conclusion": 3,
-        "items": 45,
-        "categories": 8,
-        "step_lessons_reviewed": 24,
-        "inkp_tabs": 6,
-        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
-        "semantic_qa_verified": false,
-        "step_items": 24,
-        "overview": 18,
-        "structural_counts_verified": true
+        "ci_success": 7,
+        "test_cases_added": 5,
+        "main_commit": "b9a754c7a81e69503ec5f119d8283024acbc661b",
+        "step6_code_committed": true,
+        "steps_created": 6,
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
+        "production_ready": false,
+        "code_tests_verified": true,
+        "tests_verified": false,
+        "ci_total": 7,
+        "steps": 6
       }
     },
+    "content": {
+      "summary": "45 lessons structurally present; source-link and semantic QA incomplete, so Stage 4 remains open until fully verified.",
+      "started_at": "2026-10-10T12:08:49.030Z",
+      "finished_at": null,
+      "status": "in_progress",
+      "outputs": {
+        "inkp_tabs": 6,
+        "structural_counts_verified": true,
+        "overview": 18,
+        "step_lessons_reviewed": 24,
+        "categories": 8,
+        "items": 45,
+        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
+        "conclusion": 3,
+        "structural_qa": true,
+        "step_items": 24,
+        "semantic_qa_verified": false,
+        "missing_linked_documents": 0
+      },
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
     "intro": {
+      "summary": "Read-back verified Junior FDE skill links, seven detailed Introduction sections, HTML architecture/data-flow diagram and existing Media Library cover (reused).",
+      "started_at": "2026-10-10T08:45:44.552Z",
       "updated_by": "api-key:for-chatgpt-test-2",
       "status": "done",
-      "finished_at": "2026-10-10T09:03:30.193Z",
-      "started_at": "2026-10-10T08:45:44.552Z",
-      "summary": "Read-back verified Junior FDE skill links, seven detailed Introduction sections, HTML architecture/data-flow diagram and existing Media Library cover (reused).",
       "outputs": {
-        "skills_linked": 5,
-        "cover_reused": true,
-        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
+        "level": "junior",
         "intro_sections": 7,
-        "level": "junior"
-      }
+        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
+        "cover_reused": true,
+        "skills_linked": 5
+      },
+      "finished_at": "2026-10-10T09:03:30.193Z"
     },
     "inkp": {
       "updated_by": "api-key:for-chatgpt-test-2",
-      "started_at": "2026-10-10T12:08:38.998Z",
+      "summary": "Verified six ordered STEP tabs in main .inkp, 48 per-step Process Executor documents and zero missing links using MCP summary. Diagrams reflect the educational CRD inventory and call relations.",
       "outputs": {
+        "linked_docs": 48,
         "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service/blob/main/redis-backed-ai-job-processing-service.inkp",
         "source_audit_verified": false,
-        "inkp_path": "redis-backed-ai-job-processing-service.inkp",
         "missing_links": 0,
-        "linked_docs": 48,
-        "tabs": 6
+        "tabs": 6,
+        "inkp_path": "redis-backed-ai-job-processing-service.inkp"
       },
-      "summary": "Verified six ordered STEP tabs in main .inkp, 48 per-step Process Executor documents and zero missing links using MCP summary. Diagrams reflect the educational CRD inventory and call relations.",
       "status": "done",
+      "started_at": "2026-10-10T12:08:38.998Z",
       "finished_at": "2026-10-10T12:11:29.539Z"
-    },
-    "repo": {
-      "summary": "Verified GitHub Actions success 7/7 (STEP-1…STEP-6 and main) after fixing pytest import-path invocation. Six cumulative learning branches include HTTP endpoints, local queue/worker exercises, README, STEP-N.crd/md and tests; main contains FastAPI/Redis worker + Docker, CI, and FINAL.crd. Educational reference, not a hardened production queue.",
-      "outputs": {
-        "steps_created": 6,
-        "production_ready": false,
-        "step6_code_committed": true,
-        "tests_verified": false,
-        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
-        "steps": 6,
-        "code_tests_verified": true,
-        "ci_success": 7,
-        "main_commit": "b9a754c7a81e69503ec5f119d8283024acbc661b",
-        "ci_total": 7,
-        "test_cases_added": 5
-      },
-      "status": "done",
-      "updated_by": "api-key:for-chatgpt-test-2",
-      "started_at": "2026-10-10T11:44:09.706Z",
-      "finished_at": "2026-10-10T12:11:14.658Z"
     }
   },
-  "updated_at": "2026-10-10T16:10:29.852Z"
+  "updated_at": "2026-10-10T17:02:22.403Z"
 }
