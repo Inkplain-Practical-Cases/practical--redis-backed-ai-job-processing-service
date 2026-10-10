@@ -1,8 +1,8 @@
 {
   "crd_version": 1,
-  "name": "Redis jobs step 6",
+  "name": "Redis AI job service STEP-6",
   "description": "Failure tests observability and CI",
-  "generated_at": "2026-10-10T11:46:00Z",
+  "generated_at": "2026-10-10T12:05:00Z",
   "source": {
     "repo": "github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
     "revision": "step-06-failure-tests-observability-and-ci",
@@ -16,19 +16,604 @@
   "flows": [
     {
       "id": "jobs",
-      "name": "Job processing",
-      "description": "Failure tests observability and CI",
-      "entry": "be.summarize_metrics"
+      "name": "AI job lifecycle",
+      "description": "Submission, queue processing and status retrieval",
+      "entry": "be.submit_job"
     }
   ],
   "components": [
+    {
+      "id": "be.submit_job",
+      "name": "submit_job",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "submit_job performs its responsibility in the STEP-6 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "submit_job",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "request validation",
+          "origin": "imported",
+          "description": "Delegates to be.JobInput for request validation.",
+          "show": true,
+          "calls": {
+            "component": "be.JobInput",
+            "type": "call",
+            "label": "request validation",
+            "evidence": "Source: app/main.py"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "submit job",
+          "origin": "imported",
+          "description": "Delegates to be.JobService for submit job.",
+          "show": true,
+          "calls": {
+            "component": "be.JobService",
+            "type": "call",
+            "label": "submit job",
+            "evidence": "Source: app/main.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "POST /jobs"
+      }
+    },
+    {
+      "id": "be.get_job",
+      "name": "get_job",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "get_job performs its responsibility in the STEP-6 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "get_job",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "retrieve scoped job",
+          "origin": "imported",
+          "description": "Delegates to be.JobService for retrieve scoped job.",
+          "show": true,
+          "calls": {
+            "component": "be.JobService",
+            "type": "call",
+            "label": "retrieve scoped job",
+            "evidence": "Source: app/main.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "GET /jobs/{job_id}"
+      }
+    },
+    {
+      "id": "be.JobInput",
+      "name": "JobInput",
+      "kind": "class",
+      "side": "backend",
+      "layer": "schema",
+      "description": "JobInput performs its responsibility in the STEP-6 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "JobInput",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.JobRequest",
+      "name": "JobRequest",
+      "kind": "class",
+      "side": "backend",
+      "layer": "schema",
+      "description": "JobRequest performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/schemas/job_request.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/schemas/job_request.py",
+        "symbol": "JobRequest",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.MemoryQueue",
+      "name": "MemoryQueue",
+      "kind": "class",
+      "side": "backend",
+      "layer": "provider",
+      "description": "MemoryQueue performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/providers/memory_queue.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/providers/memory_queue.py",
+        "symbol": "MemoryQueue",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.process_next",
+      "name": "process_next",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "process_next performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/process_next.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/process_next.py",
+        "symbol": "process_next",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "pop job",
+          "origin": "imported",
+          "description": "Delegates to be.MemoryQueue for pop job.",
+          "show": true,
+          "calls": {
+            "component": "be.MemoryQueue",
+            "type": "call",
+            "label": "pop job",
+            "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.run_once",
+      "name": "run_once",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "run_once performs its responsibility in the STEP-6 implementation. See app/main.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/main.py",
+        "symbol": "run_once",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "execute local job",
+          "origin": "imported",
+          "description": "Delegates to be.process_next for execute local job.",
+          "show": true,
+          "calls": {
+            "component": "be.process_next",
+            "type": "call",
+            "label": "execute local job",
+            "evidence": "Source: app/main.py"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "retry processing",
+          "origin": "imported",
+          "description": "Delegates to be.process_with_retries for retry processing.",
+          "show": true,
+          "calls": {
+            "component": "be.process_with_retries",
+            "type": "call",
+            "label": "retry processing",
+            "evidence": "Source: app/main.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "POST /internal/run-once"
+      }
+    },
+    {
+      "id": "be.find_existing",
+      "name": "find_existing",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "find_existing performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/find_existing.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/find_existing.py",
+        "symbol": "find_existing",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "read tenant idempotency",
+          "origin": "imported",
+          "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+          "show": true,
+          "calls": {
+            "component": "be.MemoryQueue",
+            "type": "call",
+            "label": "read tenant idempotency",
+            "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.process_with_retries",
+      "name": "process_with_retries",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "process_with_retries performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/process_with_retries.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/process_with_retries.py",
+        "symbol": "process_with_retries",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "unchanged",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "invoke executor",
+          "origin": "imported",
+          "description": "Delegates to be.FakeAI for invoke executor.",
+          "show": true,
+          "calls": {
+            "component": "be.FakeAI",
+            "type": "call",
+            "label": "invoke executor",
+            "evidence": "Source: app/features/feature_jobs/services/process_with_retries.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.RedisStore",
+      "name": "RedisStore",
+      "kind": "class",
+      "side": "backend",
+      "layer": "provider",
+      "description": "RedisStore performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/providers/redis_store.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/providers/redis_store.py",
+        "symbol": "RedisStore",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.JobService",
+      "name": "JobService",
+      "kind": "class",
+      "side": "backend",
+      "layer": "service",
+      "description": "JobService performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/job_service.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/job_service.py",
+        "symbol": "JobService",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "persist/read job",
+          "origin": "imported",
+          "description": "Delegates to be.RedisStore for persist/read job.",
+          "show": true,
+          "calls": {
+            "component": "be.RedisStore",
+            "type": "call",
+            "label": "persist/read job",
+            "evidence": "Source: app/features/feature_jobs/services/job_service.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.JobWorker",
+      "name": "JobWorker",
+      "kind": "class",
+      "side": "backend",
+      "layer": "service",
+      "description": "JobWorker performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/job_worker.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/job_worker.py",
+        "symbol": "JobWorker",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "dequeue/update/acknowledge",
+          "origin": "imported",
+          "description": "Delegates to be.RedisStore for dequeue/update/acknowledge.",
+          "show": true,
+          "calls": {
+            "component": "be.RedisStore",
+            "type": "call",
+            "label": "dequeue/update/acknowledge",
+            "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "request deterministic inference",
+          "origin": "imported",
+          "description": "Delegates to be.FakeAI for request deterministic inference.",
+          "show": true,
+          "calls": {
+            "component": "be.FakeAI",
+            "type": "call",
+            "label": "request deterministic inference",
+            "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.FakeAI",
+      "name": "FakeAI",
+      "kind": "class",
+      "side": "backend",
+      "layer": "provider",
+      "description": "FakeAI performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/providers/fake_ai.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/providers/fake_ai.py",
+        "symbol": "FakeAI",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "See original source for conditional checks"
+      }
+    },
+    {
+      "id": "be.worker_main",
+      "name": "main",
+      "kind": "route",
+      "side": "backend",
+      "layer": "door",
+      "description": "main performs its responsibility in the STEP-6 implementation. See app/worker.py.",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/worker.py",
+        "symbol": "main",
+        "lines": [
+          1,
+          100
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "start worker",
+          "origin": "imported",
+          "description": "Delegates to be.JobWorker for start worker.",
+          "show": true,
+          "calls": {
+            "component": "be.JobWorker",
+            "type": "call",
+            "label": "start worker",
+            "evidence": "Source: app/worker.py"
+          }
+        }
+      ],
+      "outputs": [],
+      "attributes": {
+        "endpoint": "python -m app.worker"
+      }
+    },
     {
       "id": "be.summarize_metrics",
       "name": "summarize_metrics",
       "kind": "function",
       "side": "backend",
       "layer": "service",
-      "description": "Failure tests observability and CI",
+      "description": "summarize_metrics performs its responsibility in the STEP-6 implementation. See app/features/feature_jobs/services/summarize_metrics.py.",
       "flows": [
         "jobs"
       ],
@@ -37,11 +622,11 @@
         "symbol": "summarize_metrics",
         "lines": [
           1,
-          30
+          100
         ]
       },
       "owner": "feature_jobs",
-      "component_reason": "Dedicated single-responsibility function",
+      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
       "status": "observed",
       "step_change": "added",
       "inputs": [],
@@ -49,7 +634,7 @@
       "operations": [],
       "outputs": [],
       "attributes": {
-        "validations_note": "No internal explicit validation"
+        "validations_note": "See original source for conditional checks"
       }
     }
   ],
