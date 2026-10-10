@@ -57,7 +57,7 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "MCP read-back: eight active portal categories and 45 published-content lesson records (Overview 18; STEP-1–6 four each; Conclusion 3). Six System Design lessons have INKP visualization blocks. Content still requires per-component source-backed 4M, full CRD trees/source walkthrough and semantic QA; not eligible for Done.",
+      "summary": "STEP-1 Components expanded with source-backed 4M for JobInput, submit_job, get_job and JobRequest, including explicit demo authorization/idempotency limits. MCP read-back confirmed 15 blocks and four component source links; remaining portal semantic QA open.",
       "outputs": {
         "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
         "categories": 8,
@@ -73,5 +73,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T12:11:29.539Z"
+  "updated_at": "2026-10-10T12:20:19.727Z"
 }
