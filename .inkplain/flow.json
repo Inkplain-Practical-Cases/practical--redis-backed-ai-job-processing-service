@@ -6,76 +6,76 @@
   },
   "current": "content",
   "stages": {
-    "intro": {
-      "status": "done",
-      "summary": "Read-back verified Junior FDE skill links, seven detailed Introduction sections, HTML architecture/data-flow diagram and existing Media Library cover (reused).",
-      "started_at": "2026-10-10T08:45:44.552Z",
-      "finished_at": "2026-10-10T09:03:30.193Z",
+    "content": {
+      "status": "in_progress",
+      "finished_at": null,
       "updated_by": "api-key:for-chatgpt-test-2",
+      "started_at": "2026-10-10T12:08:49.030Z",
+      "summary": "45 lessons inspected for structure and basic depth; final source-link/semantic audit remains open; stage not accepted yet.",
       "outputs": {
+        "missing_linked_documents": 0,
+        "structural_qa": true,
+        "conclusion": 3,
+        "items": 45,
+        "categories": 8,
+        "step_lessons_reviewed": 24,
+        "inkp_tabs": 6,
         "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
-        "intro_sections": 7,
+        "semantic_qa_verified": false,
+        "step_items": 24,
+        "overview": 18,
+        "structural_counts_verified": true
+      }
+    },
+    "intro": {
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "status": "done",
+      "finished_at": "2026-10-10T09:03:30.193Z",
+      "started_at": "2026-10-10T08:45:44.552Z",
+      "summary": "Read-back verified Junior FDE skill links, seven detailed Introduction sections, HTML architecture/data-flow diagram and existing Media Library cover (reused).",
+      "outputs": {
         "skills_linked": 5,
         "cover_reused": true,
+        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
+        "intro_sections": 7,
         "level": "junior"
       }
     },
-    "repo": {
-      "status": "done",
-      "summary": "Verified GitHub Actions success 7/7 (STEP-1…STEP-6 and main) after fixing pytest import-path invocation. Six cumulative learning branches include HTTP endpoints, local queue/worker exercises, README, STEP-N.crd/md and tests; main contains FastAPI/Redis worker + Docker, CI, and FINAL.crd. Educational reference, not a hardened production queue.",
-      "started_at": "2026-10-10T11:44:09.706Z",
-      "finished_at": "2026-10-10T12:11:14.658Z",
+    "inkp": {
       "updated_by": "api-key:for-chatgpt-test-2",
+      "started_at": "2026-10-10T12:08:38.998Z",
       "outputs": {
-        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
+        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service/blob/main/redis-backed-ai-job-processing-service.inkp",
+        "source_audit_verified": false,
+        "inkp_path": "redis-backed-ai-job-processing-service.inkp",
+        "missing_links": 0,
+        "linked_docs": 48,
+        "tabs": 6
+      },
+      "summary": "Verified six ordered STEP tabs in main .inkp, 48 per-step Process Executor documents and zero missing links using MCP summary. Diagrams reflect the educational CRD inventory and call relations.",
+      "status": "done",
+      "finished_at": "2026-10-10T12:11:29.539Z"
+    },
+    "repo": {
+      "summary": "Verified GitHub Actions success 7/7 (STEP-1…STEP-6 and main) after fixing pytest import-path invocation. Six cumulative learning branches include HTTP endpoints, local queue/worker exercises, README, STEP-N.crd/md and tests; main contains FastAPI/Redis worker + Docker, CI, and FINAL.crd. Educational reference, not a hardened production queue.",
+      "outputs": {
         "steps_created": 6,
+        "production_ready": false,
         "step6_code_committed": true,
         "tests_verified": false,
-        "main_commit": "b9a754c7a81e69503ec5f119d8283024acbc661b",
-        "test_cases_added": 5,
-        "production_ready": false,
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
         "steps": 6,
+        "code_tests_verified": true,
         "ci_success": 7,
+        "main_commit": "b9a754c7a81e69503ec5f119d8283024acbc661b",
         "ci_total": 7,
-        "code_tests_verified": true
-      }
-    },
-    "inkp": {
+        "test_cases_added": 5
+      },
       "status": "done",
-      "summary": "Verified six ordered STEP tabs in main .inkp, 48 per-step Process Executor documents and zero missing links using MCP summary. Diagrams reflect the educational CRD inventory and call relations.",
-      "outputs": {
-        "inkp_path": "redis-backed-ai-job-processing-service.inkp",
-        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service/blob/main/redis-backed-ai-job-processing-service.inkp",
-        "tabs": 6,
-        "linked_docs": 48,
-        "missing_links": 0,
-        "source_audit_verified": false
-      },
-      "started_at": "2026-10-10T12:08:38.998Z",
-      "finished_at": "2026-10-10T12:11:29.539Z",
-      "updated_by": "api-key:for-chatgpt-test-2"
-    },
-    "content": {
-      "status": "in_progress",
-      "summary": "This run read back all 45 lessons and verified six INKP tabs with zero missing documents. Improved Overview with interactive seven-file CRD tree, exact main-branch FastAPI source and detailed real repository map/run commands. Full semantic/source-link audit and production-authorization caveats remain open.",
-      "outputs": {
-        "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
-        "categories": 8,
-        "items": 45,
-        "overview": 18,
-        "step_items": 24,
-        "conclusion": 3,
-        "structural_counts_verified": true,
-        "semantic_qa_verified": false,
-        "structural_qa": true,
-        "step_lessons_reviewed": 24,
-        "inkp_tabs": 6,
-        "missing_linked_documents": 0
-      },
-      "started_at": "2026-10-10T12:08:49.030Z",
-      "finished_at": null,
-      "updated_by": "api-key:for-chatgpt-test-2"
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "started_at": "2026-10-10T11:44:09.706Z",
+      "finished_at": "2026-10-10T12:11:14.658Z"
     }
   },
-  "updated_at": "2026-10-10T15:40:50.954Z"
+  "updated_at": "2026-10-10T16:10:29.852Z"
 }
