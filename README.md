@@ -1,18 +1,26 @@
 # Redis-Backed AI Job Processing Service
 
-Build a durable Redis-backed asynchronous AI job API with worker processing, bounded retries, idempotency, state tracking, audit logs and deterministic offline AI simulation.
+## Build
+FastAPI API with Redis job state and queue, a separate worker process, tenant-scoped status lookups, idempotency keys, a deterministic offline AI adapter, bounded transient retries, Docker Compose and pytest fixtures.
 
-An Inkplain practical case: a real project built step by step.
-
-## How this repository works
-
-Every step of the lesson has its own branch, and each one contains all steps up to it:
-
+## Run
 ```bash
-git clone https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service.git
-cd practical--redis-backed-ai-job-processing-service
-git branch -r            # list the step branches
-git checkout step-01-…   # code after step 1
+docker compose up --build
+```
+Submit with `POST /jobs` JSON `{ "tenant_id": "demo", "prompt": "hello" }` and header `Idempotency-Key: demo-1`. Poll `GET /jobs/{job_id}` with header `X-Tenant-Id: demo`.
+
+## Tests
+```bash
+pip install -r requirements.txt
+pytest -q
 ```
 
-`main` holds the final, complete version.
+## Learning stages
+- STEP-1: Async API intake
+- STEP-2: Queue provider
+- STEP-3: Worker lifecycle
+- STEP-4: Ownership and deduplication
+- STEP-5: Retry exhaustion
+- STEP-6: Failure coverage, logs and CI
+
+Each `step-0N-*` branch has its corresponding `STEP-N.md` and `.crd`. This is an educational reference, **not a production-hardened queue**; worker leases, requeue after crash, nonblocking retry scheduling, authorization and production monitoring need hardening.
