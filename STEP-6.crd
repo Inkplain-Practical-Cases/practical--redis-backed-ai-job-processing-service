@@ -258,63 +258,6 @@
       }
     },
     {
-      "id": "be.run_once",
-      "name": "run_once",
-      "kind": "route",
-      "side": "backend",
-      "layer": "door",
-      "description": "run_once performs its responsibility in the STEP-6 implementation. See app/main.py.",
-      "flows": [
-        "jobs"
-      ],
-      "source": {
-        "file": "app/main.py",
-        "symbol": "run_once",
-        "lines": [
-          1,
-          100
-        ]
-      },
-      "owner": "feature_jobs",
-      "component_reason": "Defined in the step branch source and contributes to the job processing flow.",
-      "status": "observed",
-      "step_change": "unchanged",
-      "inputs": [],
-      "validations": [],
-      "operations": [
-        {
-          "id": "op-1",
-          "title": "execute local job",
-          "origin": "imported",
-          "description": "Delegates to be.process_next for execute local job.",
-          "show": true,
-          "calls": {
-            "component": "be.process_next",
-            "type": "call",
-            "label": "execute local job",
-            "evidence": "Source: app/main.py"
-          }
-        },
-        {
-          "id": "op-2",
-          "title": "retry processing",
-          "origin": "imported",
-          "description": "Delegates to be.process_with_retries for retry processing.",
-          "show": true,
-          "calls": {
-            "component": "be.process_with_retries",
-            "type": "call",
-            "label": "retry processing",
-            "evidence": "Source: app/main.py"
-          }
-        }
-      ],
-      "outputs": [],
-      "attributes": {
-        "endpoint": "POST /internal/run-once"
-      }
-    },
-    {
       "id": "be.find_existing",
       "name": "find_existing",
       "kind": "function",
@@ -646,6 +589,8 @@
     "title": "Failure tests observability and CI",
     "branch": "step-06-failure-tests-observability-and-ci",
     "previous": "STEP-5.crd",
-    "removed": []
+    "removed": [
+      "be.run_once"
+    ]
   }
 }
