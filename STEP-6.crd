@@ -54,7 +54,7 @@
           "description": "Delegates to be.JobInput for request validation.",
           "show": true,
           "calls": {
-            "component": "be.JobInput",
+            "component": "be.SubmitJob",
             "type": "call",
             "label": "request validation",
             "evidence": "Source: app/main.py"
@@ -124,18 +124,18 @@
       }
     },
     {
-      "id": "be.JobInput",
-      "name": "JobInput",
+      "id": "be.SubmitJob",
+      "name": "SubmitJob",
       "kind": "class",
       "side": "backend",
       "layer": "schema",
-      "description": "JobInput performs its responsibility in the STEP-6 implementation. See app/main.py.",
+      "description": "Pydantic validation model declared in app/main.py for POST /jobs",
       "flows": [
         "jobs"
       ],
       "source": {
         "file": "app/main.py",
-        "symbol": "JobInput",
+        "symbol": "SubmitJob",
         "lines": [
           1,
           100
