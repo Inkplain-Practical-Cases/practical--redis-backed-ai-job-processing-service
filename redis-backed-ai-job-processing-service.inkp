@@ -1,10 +1,96 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-10T11:58:00Z",
+  "exportedAt": "2026-10-10T12:11:00Z",
   "projectId": "redis-backed-ai-job-processing-service-source",
   "projectName": "Redis-Backed AI Job Processing Service",
   "meta": null,
   "docs": [
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s1-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s1-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s1-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
     {
       "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s1-be-jobrequest",
       "data": {
@@ -21,6 +107,10 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
           }
         ]
       }
@@ -32,14 +122,97 @@
         "order": 0,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s1-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s1-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s1-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s1-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s1-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s1-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s1-be-jobrequest",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 860,
+              "y": 80
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "JobRequest",
               "shape": "module",
@@ -55,7 +228,134 @@
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-1-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s1-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s1-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s2-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s2-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s2-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s2-be-jobrequest",
+      "data": {
+        "name": "JobRequest",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/schemas/job_request.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
       }
     },
     {
@@ -74,6 +374,10 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
           }
         ]
       }
@@ -85,14 +389,120 @@
         "order": 1,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s2-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s2-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s2-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s2-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s2-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s2-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s2-be-jobrequest",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobRequest",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s2-be-jobrequest",
+              "linkedCanvasName": "JobRequest",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/schemas/job_request.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s2-be-memoryqueue",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 80,
+              "y": 325
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "MemoryQueue",
               "shape": "module",
@@ -108,7 +518,158 @@
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-2-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s2-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s2-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-jobrequest",
+      "data": {
+        "name": "JobRequest",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/schemas/job_request.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-memoryqueue",
+      "data": {
+        "name": "MemoryQueue",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/memory_queue.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
       }
     },
     {
@@ -117,7 +678,21 @@
         "name": "process_next",
         "input": [],
         "validations": [],
-        "operation": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "pop job",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for pop job.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "pop job",
+              "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+            }
+          }
+        ],
         "output": [],
         "attributes": [
           {
@@ -127,6 +702,48 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s3-be-run-once",
+      "data": {
+        "name": "run_once",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "execute local job",
+            "origin": "imported",
+            "description": "Delegates to be.process_next for execute local job.",
+            "show": true,
+            "calls": {
+              "component": "be.process_next",
+              "type": "call",
+              "label": "execute local job",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "door"
           }
         ]
       }
@@ -138,14 +755,143 @@
         "order": 2,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-jobrequest",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobRequest",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-jobrequest",
+              "linkedCanvasName": "JobRequest",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/schemas/job_request.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-memoryqueue",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "MemoryQueue",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-memoryqueue",
+              "linkedCanvasName": "MemoryQueue",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/providers/memory_queue.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-process-next",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 340,
+              "y": 325
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "process_next",
               "shape": "module",
@@ -157,11 +903,321 @@
                 "step_change": "added",
                 "source_file": "app/features/feature_jobs/services/process_next.py"
               },
-              "operationSteps": []
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "pop job",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for pop job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "pop job",
+                    "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s3-be-run-once",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "run_once",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s3-be-run-once",
+              "linkedCanvasName": "run_once",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "execute local job",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_next for execute local job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_next",
+                    "type": "call",
+                    "label": "execute local job",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-3-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s3-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s3-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-3-be.process_next-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s3-be-process-next",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s3-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "pop job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-3-be.run_once-be.process_next-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s3-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s3-be-process-next",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "execute local job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-jobrequest",
+      "data": {
+        "name": "JobRequest",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/schemas/job_request.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-memoryqueue",
+      "data": {
+        "name": "MemoryQueue",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/memory_queue.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-process-next",
+      "data": {
+        "name": "process_next",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "pop job",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for pop job.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "pop job",
+              "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/process_next.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s4-be-run-once",
+      "data": {
+        "name": "run_once",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "execute local job",
+            "origin": "imported",
+            "description": "Delegates to be.process_next for execute local job.",
+            "show": true,
+            "calls": {
+              "component": "be.process_next",
+              "type": "call",
+              "label": "execute local job",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
       }
     },
     {
@@ -170,7 +1226,21 @@
         "name": "find_existing",
         "input": [],
         "validations": [],
-        "operation": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "read tenant idempotency",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "read tenant idempotency",
+              "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+            }
+          }
+        ],
         "output": [],
         "attributes": [
           {
@@ -180,6 +1250,10 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
           }
         ]
       }
@@ -191,14 +1265,217 @@
         "order": 3,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-jobrequest",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobRequest",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-jobrequest",
+              "linkedCanvasName": "JobRequest",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/schemas/job_request.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-memoryqueue",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "MemoryQueue",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-memoryqueue",
+              "linkedCanvasName": "MemoryQueue",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/providers/memory_queue.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-process-next",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "process_next",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-process-next",
+              "linkedCanvasName": "process_next",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/process_next.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "pop job",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for pop job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "pop job",
+                    "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-run-once",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "run_once",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s4-be-run-once",
+              "linkedCanvasName": "run_once",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "execute local job",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_next for execute local job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_next",
+                    "type": "call",
+                    "label": "execute local job",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s4-be-find-existing",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 860,
+              "y": 325
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "find_existing",
               "shape": "module",
@@ -210,11 +1487,351 @@
                 "step_change": "added",
                 "source_file": "app/features/feature_jobs/services/find_existing.py"
               },
-              "operationSteps": []
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "read tenant idempotency",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "read tenant idempotency",
+                    "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+                  }
+                }
+              ]
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-4-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s4-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s4-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-be.process_next-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s4-be-process-next",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s4-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "pop job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-be.run_once-be.process_next-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s4-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s4-be-process-next",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "execute local job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-be.find_existing-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s4-be-find-existing",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s4-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "read tenant idempotency",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-jobrequest",
+      "data": {
+        "name": "JobRequest",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/schemas/job_request.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-memoryqueue",
+      "data": {
+        "name": "MemoryQueue",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/memory_queue.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-process-next",
+      "data": {
+        "name": "process_next",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "pop job",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for pop job.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "pop job",
+              "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/process_next.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-run-once",
+      "data": {
+        "name": "run_once",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "execute local job",
+            "origin": "imported",
+            "description": "Delegates to be.process_next for execute local job.",
+            "show": true,
+            "calls": {
+              "component": "be.process_next",
+              "type": "call",
+              "label": "execute local job",
+              "evidence": "Source: app/main.py"
+            }
+          },
+          {
+            "id": "op-2",
+            "title": "retry processing",
+            "origin": "imported",
+            "description": "Delegates to be.process_with_retries for retry processing.",
+            "show": true,
+            "calls": {
+              "component": "be.process_with_retries",
+              "type": "call",
+              "label": "retry processing",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s5-be-find-existing",
+      "data": {
+        "name": "find_existing",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "read tenant idempotency",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "read tenant idempotency",
+              "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/find_existing.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
       }
     },
     {
@@ -233,6 +1850,10 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
           }
         ]
       }
@@ -244,14 +1865,267 @@
         "order": 4,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-jobrequest",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobRequest",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-jobrequest",
+              "linkedCanvasName": "JobRequest",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/schemas/job_request.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-memoryqueue",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "MemoryQueue",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-memoryqueue",
+              "linkedCanvasName": "MemoryQueue",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/providers/memory_queue.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-process-next",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "process_next",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-process-next",
+              "linkedCanvasName": "process_next",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/process_next.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "pop job",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for pop job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "pop job",
+                    "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-run-once",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "run_once",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-run-once",
+              "linkedCanvasName": "run_once",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "execute local job",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_next for execute local job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_next",
+                    "type": "call",
+                    "label": "execute local job",
+                    "evidence": "Source: app/main.py"
+                  }
+                },
+                {
+                  "id": "op-2",
+                  "title": "retry processing",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_with_retries for retry processing.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_with_retries",
+                    "type": "call",
+                    "label": "retry processing",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-find-existing",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "find_existing",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s5-be-find-existing",
+              "linkedCanvasName": "find_existing",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/find_existing.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "read tenant idempotency",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "read tenant idempotency",
+                    "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s5-be-process-with-retries",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 80,
+              "y": 570
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "process_with_retries",
               "shape": "module",
@@ -267,7 +2141,589 @@
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-5-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s5-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s5-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-be.process_next-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s5-be-process-next",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s5-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "pop job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-be.run_once-be.process_next-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s5-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s5-be-process-next",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "execute local job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-be.run_once-be.process_with_retries-op-2",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s5-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s5-be-process-with-retries",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "retry processing",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-be.find_existing-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s5-be-find-existing",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s5-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "read tenant idempotency",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-submit-job",
+      "data": {
+        "name": "submit_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "request validation",
+            "origin": "imported",
+            "description": "Delegates to be.JobInput for request validation.",
+            "show": true,
+            "calls": {
+              "component": "be.JobInput",
+              "type": "call",
+              "label": "request validation",
+              "evidence": "Source: app/main.py"
+            }
+          },
+          {
+            "id": "op-2",
+            "title": "submit job",
+            "origin": "imported",
+            "description": "Delegates to be.JobService for submit job.",
+            "show": true,
+            "calls": {
+              "component": "be.JobService",
+              "type": "call",
+              "label": "submit job",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-get-job",
+      "data": {
+        "name": "get_job",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "retrieve scoped job",
+            "origin": "imported",
+            "description": "Delegates to be.JobService for retrieve scoped job.",
+            "show": true,
+            "calls": {
+              "component": "be.JobService",
+              "type": "call",
+              "label": "retrieve scoped job",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-jobinput",
+      "data": {
+        "name": "JobInput",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-jobrequest",
+      "data": {
+        "name": "JobRequest",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/schemas/job_request.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "schema"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-memoryqueue",
+      "data": {
+        "name": "MemoryQueue",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/memory_queue.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-process-next",
+      "data": {
+        "name": "process_next",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "pop job",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for pop job.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "pop job",
+              "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/process_next.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-run-once",
+      "data": {
+        "name": "run_once",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "execute local job",
+            "origin": "imported",
+            "description": "Delegates to be.process_next for execute local job.",
+            "show": true,
+            "calls": {
+              "component": "be.process_next",
+              "type": "call",
+              "label": "execute local job",
+              "evidence": "Source: app/main.py"
+            }
+          },
+          {
+            "id": "op-2",
+            "title": "retry processing",
+            "origin": "imported",
+            "description": "Delegates to be.process_with_retries for retry processing.",
+            "show": true,
+            "calls": {
+              "component": "be.process_with_retries",
+              "type": "call",
+              "label": "retry processing",
+              "evidence": "Source: app/main.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/main.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-find-existing",
+      "data": {
+        "name": "find_existing",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "read tenant idempotency",
+            "origin": "imported",
+            "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+            "show": true,
+            "calls": {
+              "component": "be.MemoryQueue",
+              "type": "call",
+              "label": "read tenant idempotency",
+              "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/find_existing.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-process-with-retries",
+      "data": {
+        "name": "process_with_retries",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "invoke executor",
+            "origin": "imported",
+            "description": "Delegates to be.FakeAI for invoke executor.",
+            "show": true,
+            "calls": {
+              "component": "be.FakeAI",
+              "type": "call",
+              "label": "invoke executor",
+              "evidence": "Source: app/features/feature_jobs/services/process_with_retries.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/process_with_retries.py"
+          },
+          {
+            "name": "step_change",
+            "value": "unchanged"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-redisstore",
+      "data": {
+        "name": "RedisStore",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/redis_store.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+      "data": {
+        "name": "JobService",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "persist/read job",
+            "origin": "imported",
+            "description": "Delegates to be.RedisStore for persist/read job.",
+            "show": true,
+            "calls": {
+              "component": "be.RedisStore",
+              "type": "call",
+              "label": "persist/read job",
+              "evidence": "Source: app/features/feature_jobs/services/job_service.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/job_service.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+      "data": {
+        "name": "JobWorker",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "dequeue/update/acknowledge",
+            "origin": "imported",
+            "description": "Delegates to be.RedisStore for dequeue/update/acknowledge.",
+            "show": true,
+            "calls": {
+              "component": "be.RedisStore",
+              "type": "call",
+              "label": "dequeue/update/acknowledge",
+              "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+            }
+          },
+          {
+            "id": "op-2",
+            "title": "request deterministic inference",
+            "origin": "imported",
+            "description": "Delegates to be.FakeAI for request deterministic inference.",
+            "show": true,
+            "calls": {
+              "component": "be.FakeAI",
+              "type": "call",
+              "label": "request deterministic inference",
+              "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/services/job_worker.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-fakeai",
+      "data": {
+        "name": "FakeAI",
+        "input": [],
+        "validations": [],
+        "operation": [],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/features/feature_jobs/providers/fake_ai.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "provider"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-redis-backed-ai-job-processing-service-s6-be-worker-main",
+      "data": {
+        "name": "main",
+        "input": [],
+        "validations": [],
+        "operation": [
+          {
+            "id": "op-1",
+            "title": "start worker",
+            "origin": "imported",
+            "description": "Delegates to be.JobWorker for start worker.",
+            "show": true,
+            "calls": {
+              "component": "be.JobWorker",
+              "type": "call",
+              "label": "start worker",
+              "evidence": "Source: app/worker.py"
+            }
+          }
+        ],
+        "output": [],
+        "attributes": [
+          {
+            "name": "source_file",
+            "value": "app/worker.py"
+          },
+          {
+            "name": "step_change",
+            "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "door"
+          }
+        ]
       }
     },
     {
@@ -286,6 +2742,10 @@
           {
             "name": "step_change",
             "value": "added"
+          },
+          {
+            "name": "layer",
+            "value": "service"
           }
         ]
       }
@@ -297,14 +2757,501 @@
         "order": 5,
         "nodes": [
           {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-submit-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "submit_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-submit-job",
+              "linkedCanvasName": "submit_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "request validation",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobInput for request validation.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobInput",
+                    "type": "call",
+                    "label": "request validation",
+                    "evidence": "Source: app/main.py"
+                  }
+                },
+                {
+                  "id": "op-2",
+                  "title": "submit job",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobService for submit job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobService",
+                    "type": "call",
+                    "label": "submit job",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-get-job",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "get_job",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-get-job",
+              "linkedCanvasName": "get_job",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "retrieve scoped job",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobService for retrieve scoped job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobService",
+                    "type": "call",
+                    "label": "retrieve scoped job",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobinput",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobInput",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-jobinput",
+              "linkedCanvasName": "JobInput",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobrequest",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 80
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobRequest",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-jobrequest",
+              "linkedCanvasName": "JobRequest",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/schemas/job_request.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-memoryqueue",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "MemoryQueue",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-memoryqueue",
+              "linkedCanvasName": "MemoryQueue",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/providers/memory_queue.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-next",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "process_next",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-process-next",
+              "linkedCanvasName": "process_next",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/process_next.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "pop job",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for pop job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "pop job",
+                    "evidence": "Source: app/features/feature_jobs/services/process_next.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-run-once",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "run_once",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-run-once",
+              "linkedCanvasName": "run_once",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/main.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "execute local job",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_next for execute local job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_next",
+                    "type": "call",
+                    "label": "execute local job",
+                    "evidence": "Source: app/main.py"
+                  }
+                },
+                {
+                  "id": "op-2",
+                  "title": "retry processing",
+                  "origin": "imported",
+                  "description": "Delegates to be.process_with_retries for retry processing.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.process_with_retries",
+                    "type": "call",
+                    "label": "retry processing",
+                    "evidence": "Source: app/main.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-find-existing",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 325
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "find_existing",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-find-existing",
+              "linkedCanvasName": "find_existing",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/find_existing.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "read tenant idempotency",
+                  "origin": "imported",
+                  "description": "Delegates to be.MemoryQueue for read tenant idempotency.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.MemoryQueue",
+                    "type": "call",
+                    "label": "read tenant idempotency",
+                    "evidence": "Source: app/features/feature_jobs/services/find_existing.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-with-retries",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 570
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "process_with_retries",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-process-with-retries",
+              "linkedCanvasName": "process_with_retries",
+              "nodeAttributes": {
+                "step_change": "unchanged",
+                "source_file": "app/features/feature_jobs/services/process_with_retries.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "invoke executor",
+                  "origin": "imported",
+                  "description": "Delegates to be.FakeAI for invoke executor.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.FakeAI",
+                    "type": "call",
+                    "label": "invoke executor",
+                    "evidence": "Source: app/features/feature_jobs/services/process_with_retries.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-redisstore",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 570
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "RedisStore",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-redisstore",
+              "linkedCanvasName": "RedisStore",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/features/feature_jobs/providers/redis_store.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+            "type": "diagramNode",
+            "position": {
+              "x": 600,
+              "y": 570
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobService",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+              "linkedCanvasName": "JobService",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/features/feature_jobs/services/job_service.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "persist/read job",
+                  "origin": "imported",
+                  "description": "Delegates to be.RedisStore for persist/read job.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.RedisStore",
+                    "type": "call",
+                    "label": "persist/read job",
+                    "evidence": "Source: app/features/feature_jobs/services/job_service.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+            "type": "diagramNode",
+            "position": {
+              "x": 860,
+              "y": 570
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "JobWorker",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+              "linkedCanvasName": "JobWorker",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/features/feature_jobs/services/job_worker.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "dequeue/update/acknowledge",
+                  "origin": "imported",
+                  "description": "Delegates to be.RedisStore for dequeue/update/acknowledge.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.RedisStore",
+                    "type": "call",
+                    "label": "dequeue/update/acknowledge",
+                    "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+                  }
+                },
+                {
+                  "id": "op-2",
+                  "title": "request deterministic inference",
+                  "origin": "imported",
+                  "description": "Delegates to be.FakeAI for request deterministic inference.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.FakeAI",
+                    "type": "call",
+                    "label": "request deterministic inference",
+                    "evidence": "Source: app/features/feature_jobs/services/job_worker.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-fakeai",
+            "type": "diagramNode",
+            "position": {
+              "x": 80,
+              "y": 815
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "FakeAI",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-fakeai",
+              "linkedCanvasName": "FakeAI",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/features/feature_jobs/providers/fake_ai.py"
+              },
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-worker-main",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 815
+            },
+            "width": 215,
+            "height": 185,
+            "data": {
+              "label": "main",
+              "shape": "module",
+              "icon": "process-executor",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-redis-backed-ai-job-processing-service-s6-be-worker-main",
+              "linkedCanvasName": "main",
+              "nodeAttributes": {
+                "step_change": "added",
+                "source_file": "app/worker.py"
+              },
+              "operationSteps": [
+                {
+                  "id": "op-1",
+                  "title": "start worker",
+                  "origin": "imported",
+                  "description": "Delegates to be.JobWorker for start worker.",
+                  "show": true,
+                  "calls": {
+                    "component": "be.JobWorker",
+                    "type": "call",
+                    "label": "start worker",
+                    "evidence": "Source: app/worker.py"
+                  }
+                }
+              ]
+            }
+          },
+          {
             "id": "node-crd-redis-backed-ai-job-processing-service-s6-be-summarize-metrics",
             "type": "diagramNode",
             "position": {
-              "x": 120,
-              "y": 130
+              "x": 600,
+              "y": 815
             },
-            "width": 220,
-            "height": 190,
+            "width": 215,
+            "height": 185,
             "data": {
               "label": "summarize_metrics",
               "shape": "module",
@@ -320,7 +3267,200 @@
             }
           }
         ],
-        "edges": []
+        "edges": [
+          {
+            "id": "edge-6-be.submit_job-be.JobInput-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobinput",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request validation",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.submit_job-be.JobService-op-2",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-submit-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "submit job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.get_job-be.JobService-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-get-job",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "retrieve scoped job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.process_next-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-next",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "pop job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.run_once-be.process_next-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-next",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "execute local job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.run_once-be.process_with_retries-op-2",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-run-once",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-with-retries",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "retry processing",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.find_existing-be.MemoryQueue-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-find-existing",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-memoryqueue",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "read tenant idempotency",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.process_with_retries-be.FakeAI-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-process-with-retries",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-fakeai",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "invoke executor",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.JobService-be.RedisStore-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobservice",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-redisstore",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "persist/read job",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.JobWorker-be.RedisStore-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-redisstore",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "dequeue/update/acknowledge",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.JobWorker-be.FakeAI-op-2",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-fakeai",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "request deterministic inference",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-6-be.worker_main-be.JobWorker-op-1",
+            "source": "node-crd-redis-backed-ai-job-processing-service-s6-be-worker-main",
+            "target": "node-crd-redis-backed-ai-job-processing-service-s6-be-jobworker",
+            "type": "smoothstep",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "label": "start worker",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
       }
     }
   ]
