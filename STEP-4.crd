@@ -1,0 +1,66 @@
+{
+  "crd_version": 1,
+  "name": "Redis jobs step 4",
+  "description": "Deduplication and ownership",
+  "generated_at": "2026-10-10T11:46:00Z",
+  "source": {
+    "repo": "github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
+    "revision": "step-04-deduplication-and-ownership",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "flows": [
+    {
+      "id": "jobs",
+      "name": "Job processing",
+      "description": "Deduplication and ownership",
+      "entry": "be.find_existing"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.find_existing",
+      "name": "find_existing",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Deduplication and ownership",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/services/find_existing.py",
+        "symbol": "find_existing",
+        "lines": [
+          1,
+          30
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Dedicated single-responsibility function",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "No internal explicit validation"
+      }
+    }
+  ],
+  "dependencies": [],
+  "unresolved": [],
+  "step": {
+    "no": 4,
+    "of": 6,
+    "title": "Deduplication and ownership",
+    "branch": "step-04-deduplication-and-ownership",
+    "previous": "STEP-3.crd",
+    "removed": []
+  }
+}
