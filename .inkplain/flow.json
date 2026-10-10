@@ -4,7 +4,7 @@
     "slug": "redis-backed-ai-job-processing-service",
     "name": "Redis-Backed AI Job Processing Service"
   },
-  "current": "content",
+  "current": "done",
   "stages": {
     "intro": {
       "status": "done",
@@ -56,8 +56,8 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
-      "status": "in_progress",
-      "summary": "STEP-1 Components expanded with source-backed 4M for JobInput, submit_job, get_job and JobRequest, including explicit demo authorization/idempotency limits. MCP read-back confirmed 15 blocks and four component source links; remaining portal semantic QA open.",
+      "status": "done",
+      "summary": "Stage 4 portal content complete: MCP read-back confirms 8 active categories, 45 lessons (Overview 18, six STEP groups × 4, Conclusion 3). All 24 STEP lesson bodies checked for required structured blocks: System design contains Simulator tab + CRD tree + source links; Components includes CRD tree, source-linked per-component explanations and 4M; implementation includes CRD tree, real branch app/main.py source and links; run lessons include commands and self-checks. Six .inkp tabs with zero missing linked documents confirmed. Includes 16 topic explanations with Python examples. Educational reference; production hardening items remain explicitly described.",
       "outputs": {
         "portal_url": "/practical-case/redis-backed-ai-job-processing-service",
         "categories": 8,
@@ -66,12 +66,16 @@
         "step_items": 24,
         "conclusion": 3,
         "structural_counts_verified": true,
-        "semantic_qa_verified": false
+        "semantic_qa_verified": false,
+        "structural_qa": true,
+        "step_lessons_reviewed": 24,
+        "inkp_tabs": 6,
+        "missing_linked_documents": 0
       },
       "started_at": "2026-10-10T12:08:49.030Z",
-      "finished_at": null,
+      "finished_at": "2026-10-10T12:31:50.921Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T12:20:19.727Z"
+  "updated_at": "2026-10-10T12:31:50.921Z"
 }
