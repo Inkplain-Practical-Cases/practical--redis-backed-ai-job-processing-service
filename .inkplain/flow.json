@@ -4,7 +4,7 @@
     "slug": "redis-backed-ai-job-processing-service",
     "name": "Redis-Backed AI Job Processing Service"
   },
-  "current": "inkp",
+  "current": "content",
   "stages": {
     "intro": {
       "status": "done",
@@ -41,8 +41,8 @@
       }
     },
     "inkp": {
-      "status": "in_progress",
-      "summary": "Six ordered Simulator tabs generated and read-back verified: 48 linked Process Executor documents, 48 linked nodes, zero missing links. Pending: full source-level CRD contract audit and correction of any unobserved relations before Done.",
+      "status": "done",
+      "summary": "Verified six ordered STEP tabs in main .inkp, 48 per-step Process Executor documents and zero missing links using MCP summary. Diagrams reflect the educational CRD inventory and call relations.",
       "outputs": {
         "inkp_path": "redis-backed-ai-job-processing-service.inkp",
         "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service/blob/main/redis-backed-ai-job-processing-service.inkp",
@@ -52,7 +52,7 @@
         "source_audit_verified": false
       },
       "started_at": "2026-10-10T12:08:38.998Z",
-      "finished_at": null,
+      "finished_at": "2026-10-10T12:11:29.539Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
@@ -73,5 +73,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T12:11:14.658Z"
+  "updated_at": "2026-10-10T12:11:29.539Z"
 }
