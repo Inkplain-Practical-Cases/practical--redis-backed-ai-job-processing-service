@@ -1,0 +1,66 @@
+{
+  "crd_version": 1,
+  "name": "Redis jobs step 2",
+  "description": "Redis backed queue and local double",
+  "generated_at": "2026-10-10T11:46:00Z",
+  "source": {
+    "repo": "github.com/Inkplain-Practical-Cases/practical--redis-backed-ai-job-processing-service",
+    "revision": "step-02-redis-backed-queue-and-local-double",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "flows": [
+    {
+      "id": "jobs",
+      "name": "Job processing",
+      "description": "Redis backed queue and local double",
+      "entry": "be.MemoryQueue"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.MemoryQueue",
+      "name": "MemoryQueue",
+      "kind": "class",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Redis backed queue and local double",
+      "flows": [
+        "jobs"
+      ],
+      "source": {
+        "file": "app/features/feature_jobs/providers/memory_queue.py",
+        "symbol": "MemoryQueue",
+        "lines": [
+          1,
+          30
+        ]
+      },
+      "owner": "feature_jobs",
+      "component_reason": "Dedicated single-responsibility function",
+      "status": "observed",
+      "step_change": "added",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {
+        "validations_note": "No internal explicit validation"
+      }
+    }
+  ],
+  "dependencies": [],
+  "unresolved": [],
+  "step": {
+    "no": 2,
+    "of": 6,
+    "title": "Redis backed queue and local double",
+    "branch": "step-02-redis-backed-queue-and-local-double",
+    "previous": "STEP-1.crd",
+    "removed": []
+  }
+}
