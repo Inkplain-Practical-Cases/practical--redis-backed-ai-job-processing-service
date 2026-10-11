@@ -27,7 +27,7 @@
       }
     },
     "content": {
-      "summary": "Portal QA partial: STEP-3, STEP-4, STEP-5 Run lessons now link their actual tests/test_stage.py on the matching branches; all three files exist and links read back. STEP-3 and STEP-4 self-check content corrected to actual tests, including STEP-4 idempotency HTTP 409. STEP-3..5 implementation source-link completeness and overall 45-lesson semantic QA remain open.",
+      "summary": "Stage-4 partial: all 24 STEP lessons read for structural QA. STEP-3/4/5 implementation lessons now each include correct STEP-branch app/main.py source links and added source-grounded walkthroughs; all three read back. Verified six INKP tabs/0 missing and main CI success run 38101854989. Full semantic/4M/source-link and Overview/Conclusion audit remains.",
       "started_at": "2026-10-10T12:08:49.030Z",
       "finished_at": null,
       "status": "in_progress",
@@ -83,5 +83,5 @@
       "finished_at": "2026-10-10T12:11:29.539Z"
     }
   },
-  "updated_at": "2026-10-11T01:26:37.618Z"
+  "updated_at": "2026-10-11T02:10:25.497Z"
 }
