@@ -27,7 +27,7 @@
       }
     },
     "content": {
-      "summary": "45/45 lessons read; STEP-2 Run & check missing github_file for existing tests/test_stage.py; implementation lessons STEP-2..5 have incomplete source-link coverage requiring review. Prepared test-link write blocked by MCP safety checks. Six STEP-6 source paths verified; six INKP tabs/47 linked executors/0 missing. Stage remains incomplete.",
+      "summary": "Portal QA partial: STEP-3, STEP-4, STEP-5 Run lessons now link their actual tests/test_stage.py on the matching branches; all three files exist and links read back. STEP-3 and STEP-4 self-check content corrected to actual tests, including STEP-4 idempotency HTTP 409. STEP-3..5 implementation source-link completeness and overall 45-lesson semantic QA remain open.",
       "started_at": "2026-10-10T12:08:49.030Z",
       "finished_at": null,
       "status": "in_progress",
@@ -43,7 +43,13 @@
         "structural_qa": true,
         "step_items": 24,
         "semantic_qa_verified": false,
-        "missing_linked_documents": 0
+        "missing_linked_documents": 0,
+        "run_test_links_verified_steps": [
+          3,
+          4,
+          5
+        ],
+        "portal_final_audit_complete": false
       },
       "updated_by": "api-key:for-chatgpt-test-2"
     },
@@ -77,5 +83,5 @@
       "finished_at": "2026-10-10T12:11:29.539Z"
     }
   },
-  "updated_at": "2026-10-10T23:21:27.691Z"
+  "updated_at": "2026-10-11T01:26:37.618Z"
 }
