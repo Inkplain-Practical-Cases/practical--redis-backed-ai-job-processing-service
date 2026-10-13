@@ -1,0 +1,145 @@
+{
+  "erd_version": 1,
+  "name": "redis-backed-ai-job-processing-service",
+  "step": "final",
+  "engine": "redis",
+  "generated_from": [
+    "app/features/feature_jobs/providers/redis_store.py",
+    "app/features/feature_jobs/services/job_service.py"
+  ],
+  "entities": [
+    {
+      "name": "job:{id}",
+      "id": "job-id",
+      "kind": "collection",
+      "step_change": "unchanged",
+      "source": "app/features/feature_jobs/providers/redis_store.py: submit()/get()/update()",
+      "description": "Redis string at key job:{id} stores job JSON. The JSON fields are explicitly created by JobService.submit().",
+      "fields": [
+        {
+          "name": "id",
+          "type": "str",
+          "key": "PK"
+        },
+        {
+          "name": "tenant_id",
+          "type": "str"
+        },
+        {
+          "name": "idempotency_key",
+          "type": "str"
+        },
+        {
+          "name": "prompt",
+          "type": "str"
+        },
+        {
+          "name": "status",
+          "type": "str"
+        },
+        {
+          "name": "attempts",
+          "type": "int"
+        },
+        {
+          "name": "result",
+          "type": "str | None"
+        },
+        {
+          "name": "error",
+          "type": "str | None"
+        },
+        {
+          "name": "created_at",
+          "type": "ISO 8601 str"
+        },
+        {
+          "name": "updated_at",
+          "type": "ISO 8601 str"
+        }
+      ]
+    },
+    {
+      "name": "idem:{tenant_id}:{idempotency_key}",
+      "id": "idem",
+      "kind": "index",
+      "step_change": "unchanged",
+      "source": "app/features/feature_jobs/providers/redis_store.py:submit() SET idem:.. value job ID",
+      "description": "Redis string indexed by composite tenant/idempotency key. Conceptual fields represent key segments and job-ID string value, not an actual Redis hash.",
+      "fields": [
+        {
+          "name": "tenant_id",
+          "type": "str"
+        },
+        {
+          "name": "idempotency_key",
+          "type": "str"
+        },
+        {
+          "name": "value",
+          "type": "str",
+          "key": "FK",
+          "description": "Scalar Redis string value is job identifier."
+        }
+      ]
+    },
+    {
+      "name": "jobs:waiting",
+      "id": "waiting",
+      "kind": "collection",
+      "step_change": "unchanged",
+      "source": "app/features/feature_jobs/providers/redis_store.py: submit()/dequeue()/requeue()",
+      "description": "Redis list of job ID scalar values; waiting IDs are moved to the processing list atomically.",
+      "fields": [
+        {
+          "name": "value",
+          "type": "str",
+          "key": "FK",
+          "description": "Redis list member (job ID)."
+        }
+      ]
+    },
+    {
+      "name": "jobs:processing",
+      "id": "processing",
+      "kind": "collection",
+      "step_change": "unchanged",
+      "source": "app/features/feature_jobs/providers/redis_store.py: dequeue()/acknowledge()/recover()",
+      "description": "Redis list of job ID scalar values for current worker processing and recovery.",
+      "fields": [
+        {
+          "name": "value",
+          "type": "str",
+          "key": "FK",
+          "description": "Redis list member (job ID)."
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "idem",
+      "from_field": "value",
+      "to": "job-id",
+      "to_field": "id",
+      "cardinality": "many-to-one",
+      "label": "logical job-ID reference (not DB-enforced)"
+    },
+    {
+      "from": "waiting",
+      "from_field": "value",
+      "to": "job-id",
+      "to_field": "id",
+      "cardinality": "many-to-one",
+      "label": "logical job-ID reference (not DB-enforced)"
+    },
+    {
+      "from": "processing",
+      "from_field": "value",
+      "to": "job-id",
+      "to_field": "id",
+      "cardinality": "many-to-one",
+      "label": "logical job-ID reference (not DB-enforced)"
+    }
+  ]
+}

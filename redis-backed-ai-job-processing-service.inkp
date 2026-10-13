@@ -3141,6 +3141,349 @@
           }
         ]
       }
+    },
+    {
+      "path": "diagram_canvas/erd-redis-backed-ai-job-processing-service-step-6",
+      "data": {
+        "name": "STEP-6-ERD",
+        "nodes": [
+          {
+            "id": "ent-job-id",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 260,
+            "height": 260,
+            "data": {
+              "label": "job:{id}",
+              "shape": "entity-table",
+              "color": "#52c41a",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "job-id-id",
+                  "name": "id",
+                  "type": "str",
+                  "key": "PK"
+                },
+                {
+                  "id": "job-id-tenant-id",
+                  "name": "tenant_id",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-idempotency-key",
+                  "name": "idempotency_key",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-prompt",
+                  "name": "prompt",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-status",
+                  "name": "status",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-attempts",
+                  "name": "attempts",
+                  "type": "int",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-result",
+                  "name": "result",
+                  "type": "str | None",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-error",
+                  "name": "error",
+                  "type": "str | None",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-created-at",
+                  "name": "created_at",
+                  "type": "ISO 8601 str",
+                  "key": ""
+                },
+                {
+                  "id": "job-id-updated-at",
+                  "name": "updated_at",
+                  "type": "ISO 8601 str",
+                  "key": ""
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "collection"
+                },
+                {
+                  "key": "step_change",
+                  "value": "added"
+                },
+                {
+                  "key": "description",
+                  "value": "Redis string at key job:{id} stores job JSON. The JSON fields are explicitly created by JobService.submit()."
+                },
+                {
+                  "key": "source",
+                  "value": "app/features/feature_jobs/providers/redis_store.py: submit()/get()/update()"
+                },
+                {
+                  "key": "field:id",
+                  "value": "str, PK"
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-idem",
+            "type": "diagramNode",
+            "position": {
+              "x": 340,
+              "y": 0
+            },
+            "width": 260,
+            "height": 150,
+            "data": {
+              "label": "idem:{tenant_id}:{idempotency_key}",
+              "shape": "entity-table",
+              "color": "#52c41a",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "idem-tenant-id",
+                  "name": "tenant_id",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "idem-idempotency-key",
+                  "name": "idempotency_key",
+                  "type": "str",
+                  "key": ""
+                },
+                {
+                  "id": "idem-value",
+                  "name": "value",
+                  "type": "str",
+                  "key": "FK"
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "index"
+                },
+                {
+                  "key": "step_change",
+                  "value": "added"
+                },
+                {
+                  "key": "description",
+                  "value": "Redis string indexed by composite tenant/idempotency key. Conceptual fields represent key segments and job-ID string value, not an actual Redis hash."
+                },
+                {
+                  "key": "source",
+                  "value": "app/features/feature_jobs/providers/redis_store.py:submit() SET idem:.. value job ID"
+                },
+                {
+                  "key": "field:value",
+                  "value": "str, FK, Scalar Redis string value is job identifier."
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-waiting",
+            "type": "diagramNode",
+            "position": {
+              "x": 680,
+              "y": 0
+            },
+            "width": 260,
+            "height": 150,
+            "data": {
+              "label": "jobs:waiting",
+              "shape": "entity-table",
+              "color": "#52c41a",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "waiting-value",
+                  "name": "value",
+                  "type": "str",
+                  "key": "FK"
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "collection"
+                },
+                {
+                  "key": "step_change",
+                  "value": "added"
+                },
+                {
+                  "key": "description",
+                  "value": "Redis list of job ID scalar values; waiting IDs are moved to the processing list atomically."
+                },
+                {
+                  "key": "source",
+                  "value": "app/features/feature_jobs/providers/redis_store.py: submit()/dequeue()/requeue()"
+                },
+                {
+                  "key": "field:value",
+                  "value": "str, FK, Redis list member (job ID)."
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-processing",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 320
+            },
+            "width": 260,
+            "height": 150,
+            "data": {
+              "label": "jobs:processing",
+              "shape": "entity-table",
+              "color": "#52c41a",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "processing-value",
+                  "name": "value",
+                  "type": "str",
+                  "key": "FK"
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "collection"
+                },
+                {
+                  "key": "step_change",
+                  "value": "added"
+                },
+                {
+                  "key": "description",
+                  "value": "Redis list of job ID scalar values for current worker processing and recovery."
+                },
+                {
+                  "key": "source",
+                  "value": "app/features/feature_jobs/providers/redis_store.py: dequeue()/acknowledge()/recover()"
+                },
+                {
+                  "key": "field:value",
+                  "value": "str, FK, Redis list member (job ID)."
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-legend",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 530
+            },
+            "width": 260,
+            "height": 120,
+            "data": {
+              "label": "This step's database:\ngreen = added\nPK = primary key · FK = foreign key",
+              "shape": "note",
+              "color": "#d4b106",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "config": {}
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "rel-idem-value-job-id-id",
+            "source": "ent-idem",
+            "target": "ent-job-id",
+            "sourceHandle": "l",
+            "targetHandle": "r",
+            "type": "smoothstep",
+            "label": "logical job-ID reference (not DB-enforced)",
+            "data": {
+              "color": "#595959",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "rel-waiting-value-job-id-id",
+            "source": "ent-waiting",
+            "target": "ent-job-id",
+            "sourceHandle": "l",
+            "targetHandle": "r",
+            "type": "smoothstep",
+            "label": "logical job-ID reference (not DB-enforced)",
+            "data": {
+              "color": "#595959",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "rel-processing-value-job-id-id",
+            "source": "ent-processing",
+            "target": "ent-job-id",
+            "sourceHandle": "b",
+            "targetHandle": "t",
+            "type": "smoothstep",
+            "label": "logical job-ID reference (not DB-enforced)",
+            "data": {
+              "color": "#595959",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ],
+        "order": 11
+      }
     }
   ]
 }
